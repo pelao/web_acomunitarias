@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Registro App Alarmas Comunitarias</title>
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+
+		   $("#boton").click(function(event) {
+		   		$.post('ajax/registraCelular.php',$("#form").serialize(), function(data) {
+		   			//alert(data);
+		   		});
+		   		alert('Numero registrado exitosamente');
+		   });
+
+		}); 
+	</script>
+</head>
+<body>
+<div class="container">
+	<h1>Formulario Registro App Alarmas Comunitarias</h1>
+	<br>
+	<br>
+	<br>
+	<form class="form-horizontal" action="" id='form'>
+		<div class="form-group">
+			<label for="junta" class="col-sm-2 control-label">Junta de Vecinos</label>
+		    <div class="col-sm-10">
+		      <input type="email" class="form-control" name="junta" placeholder="Villa Reina Sofia" readonly>
+		    </div>
+		</div>
+		<div class="form-group">
+			<label for="celular" class="col-sm-2 control-label">N° IMEI: </label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" name="imei" placeholder="" >
+		    </div>
+		</div>
+		<div class="form-group">
+			<label for="direccion" class="col-sm-2 control-label">Direccion</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" name="direccion" placeholder="calle N° NN" >
+		    </div>
+		</div>
+		<div class="col-sm-offset-2 col-sm-10">
+	     	<input type="button" id = 'boton' class="btn btn-default" value="Registrar">
+	    </div>
+	</form>
+	</table>
+</div>
+	
+</body>
+</html>
